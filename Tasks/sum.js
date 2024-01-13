@@ -1,20 +1,11 @@
 // Sum all numbers from an array
 
 const sumNumbers = (arr) => {
-  let sum = [0];
+  let sum = 0;
 
-  for (element of arr) {
-    const type = typeof element;
+  for (const num of arr) typeof num === 'number' ? sum += num : null;
 
-    if (type === 'number') {
-      if (sum.length > 0) {
-        const newSum = sum[sum.length - 1] + element;
-        sum.push(newSum);
-      }
-    }
-  }
-  
-  return sum[sum.length - 1];
+  return sum;
 };
 
 module.exports = sumNumbers;

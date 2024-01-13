@@ -3,15 +3,11 @@
 const filterByType = (arr, type) => {
   const indicesToRemove = [];
 
-  for (element of arr) {
-    const index = arr.indexOf(element);
-    
-    if (typeof arr[index] !== type) {
-      indicesToRemove.unshift(index);
-    }
-  }
+  arr.map((element, index) =>
+    (typeof element !== type ? indicesToRemove.unshift(index) : null),
+  );
 
-  for (element of indicesToRemove) arr.splice(element, 1);
+  indicesToRemove.map((element) => arr.splice(element, 1));
 
   return arr;
 };

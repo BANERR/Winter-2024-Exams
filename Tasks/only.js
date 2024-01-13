@@ -1,14 +1,7 @@
 // Copy only listed values from dict
 
 const copyOnlyListedValues = (obj, ...allowedKeys) => {
-  const keys = Object.keys(obj);
-
-  keys.forEach((element) => {
-    if (allowedKeys.includes(element)) {
-    } else {
-      delete obj[element];
-    }
-  });
+  Object.keys(obj).map((key) => !allowedKeys.includes(key) ? delete obj[key] : null);
 
   return obj;
 };

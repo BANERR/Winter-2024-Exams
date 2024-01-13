@@ -5,11 +5,9 @@ const getMonthNumber = (monthName) => {
     'jan', 'feb','mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec',
   ];
 
-  for (let i = 0; i < monthsList.length; i++) {
-    if (monthName.toLowerCase().startsWith(monthsList[i])) return i + 1;
-  }
+  const index = monthsList.findIndex((month) => monthName.toLowerCase().startsWith(month));
 
-  return -1;
+  return index !== -1 ? index + 1 : -1;
 };
 
 module.exports = getMonthNumber;

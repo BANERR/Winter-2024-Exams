@@ -4,24 +4,12 @@ const countWords = (string) => {
   let numberOfWords = 0;
   let inWord = false;
 
-  for (char of string) {
-    if (!inWord) {
-      if (char === ' ') {
-        if (inWord === true) {
-          inWord = false;
-        }
-      } else {
-        inWord = true;
-        numberOfWords++;
-      }
-    } else {
-      if (char === ' ') {
-        if (inWord === true) {
-          inWord = false;
-        } 
-      } else {
-        inWord = true;
-      }
+  for (const char of string) {
+    if (char === ' ') inWord = false;
+    else {
+      if (!inWord) numberOfWords++;
+
+      inWord = true;
     }
   }
 
