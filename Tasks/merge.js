@@ -1,5 +1,5 @@
 // Merge two dictionaries
 
-const  mergeTwoObjects = (firstObj, secondObj) => newObj = {...firstObj, ...secondObj};
+const  mergeTwoObjects = (firstObj, secondObj) => newObj = { ...firstObj, ...secondObj };
 
 module.exports = mergeTwoObjects;

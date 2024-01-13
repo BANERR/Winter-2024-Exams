@@ -5,7 +5,7 @@ const counterOfNumberValues = (obj) => {
   const keys = Object.keys(obj);
 
   for (const key of keys) typeof obj[key] === 'number' ? sum += obj[key] : null;
-  
+
   return sum;
 };
 

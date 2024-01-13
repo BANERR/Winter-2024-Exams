@@ -2,7 +2,7 @@
 
 const getMonthNumber = (monthName) => {
   const monthsList = [
-    'jan', 'feb','mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec',
+    'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec',
   ];
 
   const index = monthsList.findIndex((month) => monthName.toLowerCase().startsWith(month));
