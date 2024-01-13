@@ -1,31 +1,31 @@
 // Count words in a string
 
-Words = function (s) {
-  number_of_words_in_s = 0;
-  flag = false;
-  
-  for (c of s) {
-    if (!flag) {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
+const countWords = (string) => {
+  let numberOfWords = 0;
+  let inWord = false;
+
+  for (char of string) {
+    if (!inWord) {
+      if (char === ' ') {
+        if (inWord === true) {
+          inWord = false;
         }
       } else {
-        flag = true;
-        number_of_words_in_s++;
+        inWord = true;
+        numberOfWords++;
       }
     } else {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
+      if (char === ' ') {
+        if (inWord === true) {
+          inWord = false;
         } 
       } else {
-        flag = true;
+        inWord = true;
       }
     }
   }
 
-  return number_of_words_in_s;
+  return numberOfWords;
 };
 
-module.exports = Words;
+module.exports = countWords;

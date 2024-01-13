@@ -1,13 +1,13 @@
 // Reverse an array, you can't use .reverse()
 
-invert = (A) => {
-  T = Object.keys(A);
+const reverseArray = (arr) => {
+  const keys = Object.keys(arr);
 
-  T.forEach((_, i) => {
-    T[i] = A.pop();
+  keys.forEach((_, index) => {
+    keys[index] = arr.pop();
   });
 
-  return T;
+  return keys;
 };
 
-module.exports = invert;
+module.exports = reverseArray;

@@ -1,25 +1,26 @@
 // Find longest string
 
-const longest = function (line = [], maxRandom = Math.random) {
-  x = -1;
-  s = '';
-  
-  for (i of line) {
-    
-    if (i.length > x) {
-      x = i.length;
+const findLongestString = (strings) => {
+  let length = -1;
+  let longestString = '';
+
+  for (let char of strings) {
+   
+    if (char.length > length) {
+      length = char.length;
     } else {
-      i = 0;
+      char = 0;
     }
   
-    if (i.length >= x) {
-      s = i;
+    if (char.length >= length) {
+      longestString = char;
     } else {
-      i = -1;
+      char = -1;
     }
+
   }
-  
-  return s;
+
+  return longestString;
 };
 
-module.exports = longest;
+module.exports = findLongestString;

@@ -1,16 +1,16 @@
 // Copy only listed values from dict
 
-only = (W, ...only) => {
-  X = Object.keys(W);
+const copyOnlyListedValues = (obj, ...allowedKeys) => {
+  const keys = Object.keys(obj);
 
-  X.forEach((Z) => {
-    if (only.includes(Z)) {
+  keys.forEach((element) => {
+    if (allowedKeys.includes(element)) {
     } else {
-      delete W[Z];
+      delete obj[element];
     }
   });
-  
-  return W;
+
+  return obj;
 };
 
-module.exports = only;
+module.exports = copyOnlyListedValues;

@@ -1,20 +1,20 @@
 // Sum all numbers from an array
 
-const k = (sum = function (s = () => {}) {
-  sum = [0];
+const sumNumbers = (arr) => {
+  let sum = [0];
 
-  for (i of s) {
-    let t = typeof i;
-    
-    if (t === 'number') {
+  for (element of arr) {
+    const type = typeof element;
+
+    if (type === 'number') {
       if (sum.length > 0) {
-        const new_Sum = sum[sum.length - 1] + i;
-        sum.push(new_Sum);
+        const newSum = sum[sum.length - 1] + element;
+        sum.push(newSum);
       }
     }
   }
   
   return sum[sum.length - 1];
-});
+};
 
-module.exports = sum;
+module.exports = sumNumbers;
