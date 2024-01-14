@@ -1,19 +1,10 @@
 // Count words in a string
 
+//Found more better variant of algoritm for this task
+
 const countWords = (string) => {
-  let numberOfWords = 0;
-  let inWord = false;
-
-  for (const char of string) {
-    if (char === ' ') inWord = false;
-    else {
-      if (!inWord) numberOfWords++;
-
-      inWord = true;
-    }
-  }
-
-  return numberOfWords;
+  if (string == '') return 0;
+  else return string.split(' ').length;
 };
 
 module.exports = countWords;
